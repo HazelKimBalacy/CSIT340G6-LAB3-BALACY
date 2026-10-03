@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #F8E5DF, #EBCDC2, #E3BDB2, #E0DBED, #C2BCDE);
+  font-family: sans-serif;
+}
+
+.app {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 24px 32px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.app h1 {
+  color: #6B5B73;
+}
+
+.app p {
+  color: #4A3F47;
+  font-size: 1.1rem;
+}
