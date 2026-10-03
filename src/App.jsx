@@ -1,7 +1,7 @@
 import './App.css'
 
 const Header = (props) => {
-  return <h1>{props.course}</h1>
+  return <h1>{props.course.name}</h1>
 }
 
 const Part = (props) => {
@@ -11,9 +11,9 @@ const Part = (props) => {
 const Content = (props) => {
   return (
     <div>
-      <Part part={props.parts[0]} />
-      <Part part={props.parts[1]} />
-      <Part part={props.parts[2]} />
+      <Part part={props.course.parts[0]} />
+      <Part part={props.course.parts[1]} />
+      <Part part={props.course.parts[2]} />
     </div>
   )
 }
@@ -21,7 +21,7 @@ const Content = (props) => {
 const Total = (props) => {
   return (
     <p>
-      Number of units {props.parts[0].exercises + props.parts[1].exercises + props.parts[2].exercises}
+      Number of units {props.course.parts[0].exercises + props.course.parts[1].exercises + props.course.parts[2].exercises}
     </p>
   )
 }
@@ -31,21 +31,23 @@ const Footer = (props) => {
 }
 
 const App = () => {
-  const course = 'CSIT340'
-  const parts = [
-    {
-      name: 'IT334',
-      exercises: 3
-    },
-    {
-      name: 'CSIT335',
-      exercises: 3
-    },
-    {
-      name: 'IT342',
-      exercises: 3
-    }
-  ]
+  const course = {
+    name: 'CSIT340',
+    parts: [
+      {
+        name: 'IT334',
+        exercises: 3
+      },
+      {
+        name: 'CSIT335',
+        exercises: 3
+      },
+      {
+        name: 'IT342',
+        exercises: 3
+      }
+    ]
+  }
 
   const fullName = 'Hazel Kim C. Balacy'
   const courseCode = 'CSIT340'
@@ -54,8 +56,8 @@ const App = () => {
   return (
     <div className="app">
       <Header course={course} />
-      <Content parts={parts} />
-      <Total parts={parts} />
+      <Content course={course} />
+      <Total course={course} />
       <Footer fullName={fullName} courseCode={courseCode} section={section} />
     </div>
   )
